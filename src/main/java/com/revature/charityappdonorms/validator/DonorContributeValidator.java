@@ -14,18 +14,18 @@ public class DonorContributeValidator {
 	public void contributeValidator(DonorDto donor) throws ValidatorException
 	{
 		int userId=donor.getUserId();
-		int requestId=donor.getRequesId();
+		int requestId=donor.getRequestId();
 		double amount=donor.getAmount();
 
-		if(userId == 0 || "".isBlank())
+		if(userId == 0)
 		{
 			throw new ValidatorException(MessageConstant.INVALID_USERID);
 		}
-		if(requestId  == 0 || "".isBlank())
+		if(requestId  == 0)
 		{
 			throw new ValidatorException(MessageConstant.INVALID_REQUESTID);
 		}
-		if(amount == 0|| "".isBlank())
+		if(amount == 0)
 		{
 			throw new ValidatorException(MessageConstant.INVALID_AMOUNT);
 		}

@@ -6,8 +6,11 @@ import org.springframework.stereotype.Repository;
 import com.revature.charityappdonorms.model.Donor;
 
 
+/*
+ * to update any inputs in the table
+ */
 @Repository
-public interface DonorTranRepo extends JpaRepository<Donor, Integer> {
+public interface DonorTransactionRepository extends JpaRepository<Donor, Integer> {
 
 	
 

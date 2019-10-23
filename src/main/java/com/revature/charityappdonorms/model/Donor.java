@@ -19,22 +19,20 @@ public class Donor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-	
+
 	@Column(name = "user_id")
 	private int userId;
-	
+
 	@Column(name = "request_id")
-	private int requesId;
-	
+	private int requestId;
+
 	@Column(name = "amount_donated")
 	private double amount;
-	
-	@Column(name = "transaction_date")
-	private LocalDate createDate=LocalDate.now();
-	
-	@Column(name = "modified_date")
-	private LocalDate updateDate=LocalDate.now();
-	
 
+	@Column(name = "transaction_date")
+	private LocalDate createDate = LocalDate.now();
+
+	@Column(name = "modified_date")
+	private LocalDate updateDate = LocalDate.now();
 
 }
