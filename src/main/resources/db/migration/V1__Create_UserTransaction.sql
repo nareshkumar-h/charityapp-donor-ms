@@ -1,5 +1,5 @@
 create table user_transaction(
-transaction_id int primary key  auto_increment,
+id int primary key  auto_increment,
 user_id int  not null,
 request_id int not null,
 amount_donated double not null,
