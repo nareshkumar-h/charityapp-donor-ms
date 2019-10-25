@@ -14,5 +14,6 @@ public class MessageConstant {
 	public static final String	INVALID_USERID="Invalid UserId";
 	public static final String	INVALID_REQUESTID="Invalid REQUESTID";
 	public static final String	INVALID_AMOUNT="Invalid amount ";
+	public static final String	INVALID_TRANSACTION="transaction failed";
 
 }
