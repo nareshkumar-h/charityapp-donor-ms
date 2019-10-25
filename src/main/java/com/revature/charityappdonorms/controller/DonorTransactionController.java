@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,13 +42,14 @@ public class DonorTransactionController {
 	@PostMapping()
 
 	@ApiOperation(value = "Donorcontribute API")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success", response = String.class),
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success", response = DonorDto.class),
 			@ApiResponse(code = 400, message = "Cannot able to Contribute ", response = Message.class) })
 
 	public ResponseEntity<?> contribute(@RequestBody DonorDto donor) {
 		try {
+			System.out.println(donor);
 			donorTransactionService.donorContribute(donor);
-			return new ResponseEntity<>(donorTransactionService, HttpStatus.OK);
+			return new ResponseEntity<>( HttpStatus.OK);
 		} catch (ServiceException e) {
 			LOGGER.error("Exception:", e);
 			Message message = new Message(e.getMessage());
@@ -60,10 +62,11 @@ public class DonorTransactionController {
 	 * array of object
 	 */
 
-	@PostMapping("mydonation")
+	@GetMapping()
 	@ResponseStatus(code = HttpStatus.OK)
 	public List<Donor> viewDonation() throws ServiceException {
 		List<Donor> donorObj = donorTransactionService.donorTransList();
+		System.out.println("list"+donorObj);
 		return donorObj;
 	}
 

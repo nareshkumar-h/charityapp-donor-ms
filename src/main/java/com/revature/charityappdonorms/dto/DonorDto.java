@@ -1,6 +1,6 @@
 package com.revature.charityappdonorms.dto;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import lombok.Data;
 
@@ -14,8 +14,8 @@ public class DonorDto {
 
 	private double amount;
 
-	private LocalDate createDate = LocalDate.now();
+	private LocalDateTime createDate;
 
-	private LocalDate updateDate = LocalDate.now();
+	private LocalDateTime updateDate;
 
 }

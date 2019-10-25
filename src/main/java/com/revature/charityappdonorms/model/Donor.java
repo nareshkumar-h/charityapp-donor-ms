@@ -1,6 +1,7 @@
 package com.revature.charityappdonorms.model;
 
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,9 +31,9 @@ public class Donor {
 	private double amount;
 
 	@Column(name = "transaction_date")
-	private LocalDate createDate = LocalDate.now();
+	private LocalDateTime createDate ;
 
 	@Column(name = "modified_date")
-	private LocalDate updateDate = LocalDate.now();
+	private LocalDateTime updateDate ;
 
 }

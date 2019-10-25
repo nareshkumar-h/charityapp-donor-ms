@@ -1,11 +1,11 @@
 package com.revature.charityappdonorms.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
 
 import com.revature.charityappdonorms.dto.DonorDto;
@@ -39,6 +39,8 @@ public class DonorTransactionService {
 			d.setRequestId(donor.getRequestId());
 			d.setUserId(donor.getUserId());
 			d.setAmount(donor.getAmount());
+			d.setCreateDate(LocalDateTime.now());
+			d.setUpdateDate(LocalDateTime.now());
 			// insert method
 			donorTransactionRepository.save(d);
 		} catch (Exception e) {
